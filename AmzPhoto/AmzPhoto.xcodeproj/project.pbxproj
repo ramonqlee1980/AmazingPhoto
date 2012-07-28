@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C126B69315C4A14300613404 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69215C4A14300613404 /* UIKit.framework */; };
+		C126B69515C4A14300613404 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69415C4A14300613404 /* Foundation.framework */; };
+		C126B69715C4A14300613404 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69615C4A14300613404 /* CoreGraphics.framework */; };
+		C126B69D15C4A14300613404 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C126B69B15C4A14300613404 /* InfoPlist.strings */; };
+		C126B69F15C4A14300613404 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C126B69E15C4A14300613404 /* main.m */; };
+		C126B6A315C4A14300613404 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C126B6A215C4A14300613404 /* AppDelegate.m */; };
+		C126B6A615C4A14300613404 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C126B6A515C4A14300613404 /* ViewController.m */; };
+		C126B6A915C4A14300613404 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C126B6A715C4A14300613404 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C126B68E15C4A14300613404 /* AmzPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmzPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C126B69215C4A14300613404 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C126B69415C4A14300613404 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C126B69615C4A14300613404 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C126B69A15C4A14300613404 /* AmzPhoto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AmzPhoto-Info.plist"; sourceTree = "<group>"; };
+		C126B69C15C4A14300613404 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C126B69E15C4A14300613404 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C126B6A015C4A14300613404 /* AmzPhoto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AmzPhoto-Prefix.pch"; sourceTree = "<group>"; };
+		C126B6A115C4A14300613404 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C126B6A215C4A14300613404 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C126B6A415C4A14300613404 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C126B6A515C4A14300613404 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C126B6A815C4A14300613404 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C126B68B15C4A14300613404 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C126B69315C4A14300613404 /* UIKit.framework in Frameworks */,
+				C126B69515C4A14300613404 /* Foundation.framework in Frameworks */,
+				C126B69715C4A14300613404 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C126B68315C4A14200613404 = {
+			isa = PBXGroup;
+			children = (
+				C126B69815C4A14300613404 /* AmzPhoto */,
+				C126B69115C4A14300613404 /* Frameworks */,
+				C126B68F15C4A14300613404 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C126B68F15C4A14300613404 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C126B68E15C4A14300613404 /* AmzPhoto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C126B69115C4A14300613404 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C126B69215C4A14300613404 /* UIKit.framework */,
+				C126B69415C4A14300613404 /* Foundation.framework */,
+				C126B69615C4A14300613404 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C126B69815C4A14300613404 /* AmzPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				C126B6A115C4A14300613404 /* AppDelegate.h */,
+				C126B6A215C4A14300613404 /* AppDelegate.m */,
+				C126B6A415C4A14300613404 /* ViewController.h */,
+				C126B6A515C4A14300613404 /* ViewController.m */,
+				C126B6A715C4A14300613404 /* ViewController.xib */,
+				C126B69915C4A14300613404 /* Supporting Files */,
+			);
+			path = AmzPhoto;
+			sourceTree = "<group>";
+		};
+		C126B69915C4A14300613404 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C126B69A15C4A14300613404 /* AmzPhoto-Info.plist */,
+				C126B69B15C4A14300613404 /* InfoPlist.strings */,
+				C126B69E15C4A14300613404 /* main.m */,
+				C126B6A015C4A14300613404 /* AmzPhoto-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C126B68D15C4A14300613404 /* AmzPhoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C126B6AC15C4A14300613404 /* Build configuration list for PBXNativeTarget "AmzPhoto" */;
+			buildPhases = (
+				C126B68A15C4A14300613404 /* Sources */,
+				C126B68B15C4A14300613404 /* Frameworks */,
+				C126B68C15C4A14300613404 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmzPhoto;
+			productName = AmzPhoto;
+			productReference = C126B68E15C4A14300613404 /* AmzPhoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C126B68515C4A14200613404 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = C126B68815C4A14200613404 /* Build configuration list for PBXProject "AmzPhoto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C126B68315C4A14200613404;
+			productRefGroup = C126B68F15C4A14300613404 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C126B68D15C4A14300613404 /* AmzPhoto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C126B68C15C4A14300613404 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C126B69D15C4A14300613404 /* InfoPlist.strings in Resources */,
+				C126B6A915C4A14300613404 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C126B68A15C4A14300613404 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C126B69F15C4A14300613404 /* main.m in Sources */,
+				C126B6A315C4A14300613404 /* AppDelegate.m in Sources */,
+				C126B6A615C4A14300613404 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C126B69B15C4A14300613404 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C126B69C15C4A14300613404 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C126B6A715C4A14300613404 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C126B6A815C4A14300613404 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C126B6AA15C4A14300613404 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C126B6AB15C4A14300613404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C126B6AD15C4A14300613404 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AmzPhoto/AmzPhoto-Prefix.pch";
+				INFOPLIST_FILE = "AmzPhoto/AmzPhoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C126B6AE15C4A14300613404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AmzPhoto/AmzPhoto-Prefix.pch";
+				INFOPLIST_FILE = "AmzPhoto/AmzPhoto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C126B68815C4A14200613404 /* Build configuration list for PBXProject "AmzPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C126B6AA15C4A14300613404 /* Debug */,
+				C126B6AB15C4A14300613404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C126B6AC15C4A14300613404 /* Build configuration list for PBXNativeTarget "AmzPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C126B6AD15C4A14300613404 /* Debug */,
+				C126B6AE15C4A14300613404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C126B68515C4A14200613404 /* Project object */;
+}
