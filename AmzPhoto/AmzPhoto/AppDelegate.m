@@ -8,19 +8,43 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "PhotoViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+#pragma mark AFPhotoEditorControllerDelegate
+- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
+{
+    // Handle the result image here
+}
+
+- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
+{
+    // Handle cancelation here
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+     self.window.backgroundColor = [UIColor whiteColor];
+#if 1
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    //self.window.rootViewController = self.viewController;
+    UIImage *imageToEdit = [UIImage imageNamed:@"Default.png"];
+    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
+    [editorController setDelegate:self];
+    //[self presentModalViewController:editorController animated:YES];
+    self.window.rootViewController = editorController;
+#else 
+    // Override point for customization after application launch.
+    PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
+    rootViewController.view.frame = [[UIScreen mainScreen] bounds];
+    [self.window addSubview:rootViewController.view];
+#endif
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

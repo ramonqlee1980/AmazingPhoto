@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AFPhotoEditorController.h"
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,AFPhotoEditorControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
