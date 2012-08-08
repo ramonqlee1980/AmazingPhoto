@@ -25,11 +25,15 @@
     // Handle cancelation here
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(void)pageScrollDone
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    //remove current view and add new view
+    [self.window release];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-     self.window.backgroundColor = [UIColor whiteColor];
-#if 1
+    self.window.backgroundColor = [UIColor whiteColor];
+#if 0
     // Override point for customization after application launch.
     //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     //self.window.rootViewController = self.viewController;
@@ -43,7 +47,35 @@
     PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
     rootViewController.view.frame = [[UIScreen mainScreen] bounds];
     [self.window addSubview:rootViewController.view];
+    self.window.rootViewController = rootViewController;
 #endif
+    [self.window makeKeyAndVisible];
+}
+// 有多少页
+//
+- (int)numberOfPages {
+	return mPageCount;
+}
+
+// 每页的图片
+//
+- (UIImage *)imageAtIndex:(int)index {
+	NSString *imageName = [NSString stringWithFormat:@"1933_%d.jpg", index + 1];
+	return [UIImage imageNamed:imageName];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //add observer for page scroll done event
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pageScrollDone) name:kPageScrollDone object:nil];
+    
+    mPageCount = 5;
+	PagePhotosView *pagePhotosView = [[PagePhotosView alloc] initWithFrame: [[UIScreen mainScreen]bounds] withDataSource: self];
+	[self.window addSubview:pagePhotosView];
+    
+	[pagePhotosView release];
     
     [self.window makeKeyAndVisible];
     return YES;
