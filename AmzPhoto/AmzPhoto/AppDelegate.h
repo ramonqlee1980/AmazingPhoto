@@ -16,9 +16,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,AFPhotoEditorControllerDelegate,PagePhotosDataSource>
 {
     NSInteger mPageCount;
+    PagePhotosView *mPagePhotosView;
 }
-@property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) ViewController *viewController;
+@property (retain, nonatomic) UIWindow *window;
 
 @end

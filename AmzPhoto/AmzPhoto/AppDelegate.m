@@ -13,7 +13,6 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
 #pragma mark AFPhotoEditorControllerDelegate
 - (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
 {
@@ -28,10 +27,11 @@
 -(void)pageScrollDone
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
+
     //remove current view and add new view
-    [self.window release];
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    mPagePhotosView.hidden = YES;
+    
+    NSLog(@"retainCount:%d",self.window.retainCount);
     self.window.backgroundColor = [UIColor whiteColor];
 #if 0
     // Override point for customization after application launch.
@@ -42,14 +42,16 @@
     [editorController setDelegate:self];
     //[self presentModalViewController:editorController animated:YES];
     self.window.rootViewController = editorController;
+    [editorController release];
 #else 
     // Override point for customization after application launch.
     PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
     rootViewController.view.frame = [[UIScreen mainScreen] bounds];
     [self.window addSubview:rootViewController.view];
     self.window.rootViewController = rootViewController;
+    [rootViewController release];
 #endif
-    [self.window makeKeyAndVisible];
+    [self.window makeKeyAndVisible];    
 }
 // 有多少页
 //
@@ -67,20 +69,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    [self.window release];
     //add observer for page scroll done event
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pageScrollDone) name:kPageScrollDone object:nil];
     
     mPageCount = 5;
-	PagePhotosView *pagePhotosView = [[PagePhotosView alloc] initWithFrame: [[UIScreen mainScreen]bounds] withDataSource: self];
-	[self.window addSubview:pagePhotosView];
-    
-	[pagePhotosView release];
+	mPagePhotosView = [[PagePhotosView alloc] initWithFrame: [[UIScreen mainScreen]bounds] withDataSource: self];
+	[self.window addSubview:mPagePhotosView];    
+	[mPagePhotosView release];
     
     [self.window makeKeyAndVisible];
     return YES;
 }
-
+-(void)dealloc
+{
+    self.window = nil;
+    [super dealloc];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
