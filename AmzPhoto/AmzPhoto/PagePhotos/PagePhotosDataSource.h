@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
+#define kPageScrollDone @"kPageScrollDone"
+
 @protocol PagePhotosDataSource
 
 // 有多少页

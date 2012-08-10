@@ -8,15 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AFPhotoEditorController.h"
-#import "PagePhotosDataSource.h"
-#import "PagePhotosView.h"
+
 
 @class ViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,AFPhotoEditorControllerDelegate,PagePhotosDataSource>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,AFPhotoEditorControllerDelegate>
 {
-    NSInteger mPageCount;
-    PagePhotosView *mPagePhotosView;
+
+    UINavigationController* mNavi;
 }
 @property (retain, nonatomic) UIWindow *window;
 

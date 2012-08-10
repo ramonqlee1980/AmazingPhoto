@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "PagePhotosDataSource.h"
 
-#define kPageScrollDone @"kPageScrollDone"
 
 @interface PagePhotosView : UIView<UIScrollViewDelegate> {
 	UIScrollView *scrollView;

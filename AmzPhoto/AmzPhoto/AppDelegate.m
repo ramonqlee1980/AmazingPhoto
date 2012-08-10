@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "PagePhotoViewController.h"
 #import "PhotoViewController.h"
 
 @implementation AppDelegate
@@ -27,43 +27,9 @@
 -(void)pageScrollDone
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-
-    //remove current view and add new view
-    mPagePhotosView.hidden = YES;
-    
+    [mNavi popToRootViewControllerAnimated:YES];
     NSLog(@"retainCount:%d",self.window.retainCount);
     self.window.backgroundColor = [UIColor whiteColor];
-#if 0
-    // Override point for customization after application launch.
-    //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    //self.window.rootViewController = self.viewController;
-    UIImage *imageToEdit = [UIImage imageNamed:@"Default.png"];
-    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
-    [editorController setDelegate:self];
-    //[self presentModalViewController:editorController animated:YES];
-    self.window.rootViewController = editorController;
-    [editorController release];
-#else 
-    // Override point for customization after application launch.
-    PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
-    rootViewController.view.frame = [[UIScreen mainScreen] bounds];
-    [self.window addSubview:rootViewController.view];
-    self.window.rootViewController = rootViewController;
-    [rootViewController release];
-#endif
-    [self.window makeKeyAndVisible];    
-}
-// 有多少页
-//
-- (int)numberOfPages {
-	return mPageCount;
-}
-
-// 每页的图片
-//
-- (UIImage *)imageAtIndex:(int)index {
-	NSString *imageName = [NSString stringWithFormat:@"1933_%d.jpg", index + 1];
-	return [UIImage imageNamed:imageName];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -71,12 +37,34 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window release];
     //add observer for page scroll done event
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pageScrollDone) name:kPageScrollDone object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pageScrollDone) name:kPageScrollDone object:nil];    
+#if 0
+    // Override point for customization after application launch.
+    //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    //self.window.rootViewController = self.viewController;
+    UIImage *imageToEdit = [UIImage imageNamed:@"Default.png"];
+    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
+    [editorController setDelegate:self];
+    mNavi = [[UINavigationController alloc]initWithRootViewController:editorController];
+    //[self presentModalViewController:editorController animated:YES];
+    //self.window.rootViewController = editorController;
+    [editorController release];
+#else 
+    // Override point for customization after application launch.
+    PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
+    rootViewController.view.frame = [[UIScreen mainScreen] bounds];
+    mNavi = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    //[self.window addSubview:rootViewController.view];
+    //self.window.rootViewController = rootViewController;
+    [rootViewController release];
+#endif
+    mNavi.navigationBarHidden = YES;
     
-    mPageCount = 5;
-	mPagePhotosView = [[PagePhotosView alloc] initWithFrame: [[UIScreen mainScreen]bounds] withDataSource: self];
-	[self.window addSubview:mPagePhotosView];    
-	[mPagePhotosView release];
+    PagePhotoViewController* page = [[PagePhotoViewController alloc]init];        
+    [mNavi pushViewController:page animated:NO];
+    [page release];  
+    
+    [self.window addSubview:mNavi.view];    
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -84,6 +72,7 @@
 -(void)dealloc
 {
     self.window = nil;
+    [mNavi release];
     [super dealloc];
 }
 - (void)applicationWillResignActive:(UIApplication *)application
