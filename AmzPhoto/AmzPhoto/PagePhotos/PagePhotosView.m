@@ -17,15 +17,18 @@
 
 @implementation PagePhotosView
 @synthesize dataSource;
-@synthesize imageViews;
+@synthesize subViews;
 
 - (id)initWithFrame:(CGRect)frame withDataSource:(id<PagePhotosDataSource>)_dataSource {
     if ((self = [super initWithFrame:frame])) {
 		self.dataSource = _dataSource;
         // Initialization UIScrollView
 		int pageControlHeight = 20;
-		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - pageControlHeight)];
-		pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, frame.size.height - pageControlHeight, frame.size.width, pageControlHeight)];
+		scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+		pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, pageControlHeight)];
+        //pageControl.backgroundColor = [UIColor clearColor];
+        [pageControl setAlpha:0.75];
+        pageControl.hidesForSinglePage = YES;
 		
 		[self addSubview:scrollView];
 		[self addSubview:pageControl];
@@ -37,7 +40,7 @@
 		for (unsigned i = 0; i < kNumberOfPages; i++) {
 			[views addObject:[NSNull null]];
 		}
-		self.imageViews = views;
+		self.subViews = views;
 		[views release];
 		
 		// a page is the width of the scroll view
@@ -70,12 +73,10 @@
     if (page >= kNumberOfPages) return;
 	
     // replace the placeholder if necessary
-    UIImageView *view = [imageViews objectAtIndex:page];
-    if ((NSNull *)view == [NSNull null]) {
-		UIImage *image = [dataSource imageAtIndex:page];
-        view = [[UIImageView alloc] initWithImage:image];
-        [imageViews replaceObjectAtIndex:page withObject:view];
-		[view release];
+    UIView *view = [subViews objectAtIndex:page];
+    if ((NSNull *)view == [NSNull null]) {       
+        view = [dataSource viewAtIndex:page];
+        [subViews replaceObjectAtIndex:page withObject:view];
     }
 	
     // add the controller's view to the scroll view
@@ -96,19 +97,21 @@
         // do nothing - the scroll was initiated from the page control, not the user dragging
         return;
     }
+    
 	
     // Switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    
+    NSLog(@"contentOffset.x:%f--contentSize:%f--pageWidth:%f",scrollView.contentOffset.x,scrollView.contentSize.width,pageWidth);
     //time's up to quit
-    if(pageControl.currentPage==[dataSource numberOfPages]-1)
+    if(scrollView.contentOffset.x+pageWidth>scrollView.contentSize.width)
     {
         [[NSNotificationCenter defaultCenter]postNotificationName:kPageScrollDone object:nil];
         return;
     }
-    pageControl.currentPage = page;
+    pageControl.currentPage = page;   
     
-
 	
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     [self loadScrollViewWithPage:page - 1];

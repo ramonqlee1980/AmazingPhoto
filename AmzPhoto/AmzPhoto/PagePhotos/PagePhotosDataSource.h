@@ -19,6 +19,6 @@
 
 // 每页的图片
 //
-- (UIImage *)imageAtIndex:(int)index;
+- (UIView *)viewAtIndex:(int)index;
 
 @end

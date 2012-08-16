@@ -23,11 +23,11 @@
 
 // 每页的图片
 //
-- (UIImage *)imageAtIndex:(int)index {
+- (UIView *)viewAtIndex:(int)index {
 	NSString *imageName = [NSString stringWithFormat:@"1933_%d.jpg", index + 1];
-	return [UIImage imageNamed:imageName];
+	UIImage* image = [UIImage imageNamed:imageName];
+    return [[[UIImageView alloc] initWithImage:image]autorelease];
 }
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -15,14 +15,14 @@
 	UIPageControl *pageControl;
 	
 	id<PagePhotosDataSource> dataSource;
-	NSMutableArray *imageViews;
+	NSMutableArray *subViews;
 	
 	// To be used when scrolls originate from the UIPageControl
     BOOL pageControlUsed;
 }
 
 @property (nonatomic, assign) id<PagePhotosDataSource> dataSource;
-@property (nonatomic, retain) NSMutableArray *imageViews;
+@property (nonatomic, retain) NSMutableArray *subViews;
 
 - (IBAction)changePage:(id)sender;
 
