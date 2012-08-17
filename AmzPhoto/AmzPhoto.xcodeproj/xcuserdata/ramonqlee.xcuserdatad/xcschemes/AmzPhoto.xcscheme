@@ -13,10 +13,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7A273B0134878D70086F740"
-               BuildableName = "Dial Example.app"
-               BlueprintName = "Dial Example"
-               ReferencedContainer = "container:Dial Example.xcodeproj">
+               BlueprintIdentifier = "C126B68D15C4A14300613404"
+               BuildableName = "AmzPhoto.app"
+               BlueprintName = "AmzPhoto"
+               ReferencedContainer = "container:AmzPhoto.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,52 +27,50 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7A273D4134878D80086F740"
-               BuildableName = "Dial ExampleTests.octest"
-               BlueprintName = "Dial ExampleTests"
-               ReferencedContainer = "container:Dial Example.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C126B68D15C4A14300613404"
+            BuildableName = "AmzPhoto.app"
+            BlueprintName = "AmzPhoto"
+            ReferencedContainer = "container:AmzPhoto.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug">
+      buildConfiguration = "Debug"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B7A273B0134878D70086F740"
-            BuildableName = "Dial Example.app"
-            BlueprintName = "Dial Example"
-            ReferencedContainer = "container:Dial Example.xcodeproj">
+            BlueprintIdentifier = "C126B68D15C4A14300613404"
+            BuildableName = "AmzPhoto.app"
+            BlueprintName = "AmzPhoto"
+            ReferencedContainer = "container:AmzPhoto.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release">
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B7A273B0134878D70086F740"
-            BuildableName = "Dial Example.app"
-            BlueprintName = "Dial Example"
-            ReferencedContainer = "container:Dial Example.xcodeproj">
+            BlueprintIdentifier = "C126B68D15C4A14300613404"
+            BuildableName = "AmzPhoto.app"
+            BlueprintName = "AmzPhoto"
+            ReferencedContainer = "container:AmzPhoto.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

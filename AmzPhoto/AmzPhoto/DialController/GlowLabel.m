@@ -23,7 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.textAlignment = UITextAlignmentCenter;
-        self.font = [UIFont fontWithName:@"Digital-7" size:60];
+        //self.font = [UIFont fontWithName:@"Digital-7" size:60];
         self.backgroundColor = [UIColor clearColor];
         
         //initialize with default colors
