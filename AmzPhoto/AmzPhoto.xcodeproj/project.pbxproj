@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30839ADD15DF0B2E00B2C2C6 /* DialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30839AD315DF0B2E00B2C2C6 /* DialController.m */; };
+		30839ADE15DF0B2E00B2C2C6 /* GlowLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30839AD515DF0B2E00B2C2C6 /* GlowLabel.m */; };
+		30839ADF15DF0B2E00B2C2C6 /* MultiDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30839AD715DF0B2E00B2C2C6 /* MultiDialViewController.m */; };
+		30839AE015DF0B2E00B2C2C6 /* Assets.fla in Resources */ = {isa = PBXBuildFile; fileRef = 30839AD915DF0B2E00B2C2C6 /* Assets.fla */; };
+		30839AE115DF0B2E00B2C2C6 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30839ADA15DF0B2E00B2C2C6 /* bg@2x.png */; };
+		30839AE315DF0B2E00B2C2C6 /* overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30839ADC15DF0B2E00B2C2C6 /* overlay@2x.png */; };
 		C126B69315C4A14300613404 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69215C4A14300613404 /* UIKit.framework */; };
 		C126B69515C4A14300613404 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69415C4A14300613404 /* Foundation.framework */; };
 		C126B69715C4A14300613404 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69615C4A14300613404 /* CoreGraphics.framework */; };
@@ -155,6 +161,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30839AD215DF0B2E00B2C2C6 /* DialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialController.h; sourceTree = "<group>"; };
+		30839AD315DF0B2E00B2C2C6 /* DialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialController.m; sourceTree = "<group>"; };
+		30839AD415DF0B2E00B2C2C6 /* GlowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowLabel.h; sourceTree = "<group>"; };
+		30839AD515DF0B2E00B2C2C6 /* GlowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlowLabel.m; sourceTree = "<group>"; };
+		30839AD615DF0B2E00B2C2C6 /* MultiDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiDialViewController.h; sourceTree = "<group>"; };
+		30839AD715DF0B2E00B2C2C6 /* MultiDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiDialViewController.m; sourceTree = "<group>"; };
+		30839AD915DF0B2E00B2C2C6 /* Assets.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Assets.fla; sourceTree = "<group>"; };
+		30839ADA15DF0B2E00B2C2C6 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		30839ADC15DF0B2E00B2C2C6 /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
 		C126B68E15C4A14300613404 /* AmzPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmzPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C126B69215C4A14300613404 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C126B69415C4A14300613404 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -460,6 +475,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30839AD115DF0B2E00B2C2C6 /* DialController */ = {
+			isa = PBXGroup;
+			children = (
+				30839AD215DF0B2E00B2C2C6 /* DialController.h */,
+				30839AD315DF0B2E00B2C2C6 /* DialController.m */,
+				30839AD415DF0B2E00B2C2C6 /* GlowLabel.h */,
+				30839AD515DF0B2E00B2C2C6 /* GlowLabel.m */,
+				30839AD615DF0B2E00B2C2C6 /* MultiDialViewController.h */,
+				30839AD715DF0B2E00B2C2C6 /* MultiDialViewController.m */,
+				30839AD815DF0B2E00B2C2C6 /* Resources */,
+			);
+			path = DialController;
+			sourceTree = "<group>";
+		};
+		30839AD815DF0B2E00B2C2C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30839AD915DF0B2E00B2C2C6 /* Assets.fla */,
+				30839ADA15DF0B2E00B2C2C6 /* bg@2x.png */,
+				30839ADC15DF0B2E00B2C2C6 /* overlay@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C126B68315C4A14200613404 = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +540,7 @@
 		C126B69815C4A14300613404 /* AmzPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				30839AD115DF0B2E00B2C2C6 /* DialController */,
 				C1ED5C8815D29EB80072AAB0 /* PagePhotos */,
 				C17E26D915D1D14300C5C781 /* AviarySDK */,
 				C17E26E315D1D14300C5C781 /* sample */,
@@ -882,6 +922,9 @@
 				C1ED5C9415D29EC20072AAB0 /* 1933_3.jpg in Resources */,
 				C1ED5C9515D29EC20072AAB0 /* 1933_4.jpg in Resources */,
 				C1ED5C9615D29EC20072AAB0 /* 1933_5.jpg in Resources */,
+				30839AE015DF0B2E00B2C2C6 /* Assets.fla in Resources */,
+				30839AE115DF0B2E00B2C2C6 /* bg@2x.png in Resources */,
+				30839AE315DF0B2E00B2C2C6 /* overlay@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1014,6 +1057,9 @@
 				C17E26BA15D1CF8300C5C781 /* PhotoViewController.m in Sources */,
 				C1ED5C8C15D29EB80072AAB0 /* PagePhotosView.m in Sources */,
 				C1C9610B15D5B49000439289 /* PagePhotoViewController.m in Sources */,
+				30839ADD15DF0B2E00B2C2C6 /* DialController.m in Sources */,
+				30839ADE15DF0B2E00B2C2C6 /* GlowLabel.m in Sources */,
+				30839ADF15DF0B2E00B2C2C6 /* MultiDialViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

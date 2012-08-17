@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    mPageCount = 5;
+    mPageCount = 2;
 	mPagePhotosView = [[PagePhotosView alloc] initWithFrame: [[UIScreen mainScreen]bounds] withDataSource: self];
 	[self.view addSubview:mPagePhotosView];    
 	[mPagePhotosView release];
