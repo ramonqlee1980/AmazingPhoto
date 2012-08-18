@@ -2,4 +2,18 @@
 <Bucket
    type = "1"
    version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "AmzPhoto/PhotoViewController.m"
+         timestampString = "366980886.125764"
+         startingColumnNumber = "2147483647"
+         endingColumnNumber = "2147483647"
+         startingLineNumber = "123"
+         endingLineNumber = "123">
+      </FileBreakpoint>
+   </FileBreakpoints>
 </Bucket>

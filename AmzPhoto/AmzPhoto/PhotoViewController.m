@@ -32,7 +32,6 @@
     filterSettingsSlider.value = 1.0;
     
     [primaryView addSubview:filterSettingsSlider];
-    filterSettingsSlider.hidden = YES;
     
     photoCaptureButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     photoCaptureButton.frame = CGRectMake(round(mainScreenFrame.size.width / 2.0 - 150.0 / 2.0), mainScreenFrame.size.height - 90.0, 150.0, 40.0);
@@ -42,22 +41,10 @@
     [photoCaptureButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     
     [primaryView addSubview:photoCaptureButton];
-        
-    multiDialController = [[MultiDialViewController alloc] init];
-    multiDialController.delegate = self;
-    multiDialController.view.frame = CGRectOffset(multiDialController.view.frame, 0.0, 0.0);
-    multiDialController.presetStrings = nil;
-    [primaryView addSubview:multiDialController.view];
     
 	self.view = primaryView;	
 }
--(void)dealloc
-{
-    [multiDialController release];
-    multiDialController = nil;
-    
-    [super dealloc];
-}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -66,7 +53,7 @@
 //    stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
     stillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
 //    filter = [[GPUImageGammaFilter alloc] init];
-    filter = [[GPUImageRGBErosionFilter alloc] initWithRadius:4];;//[[GPUImageSketchFilter alloc] init];
+    filter = [[GPUImageSketchFilter alloc] init];
 //    [(GPUImageSketchFilter *)filter setTexelHeight:(1.0 / 1024.0)];
 //    [(GPUImageSketchFilter *)filter setTexelWidth:(1.0 / 768.0)];
 //    filter = [[GPUImageSmoothToonFilter alloc] init];
@@ -89,8 +76,6 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    [multiDialController release];
-    multiDialController = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -100,8 +85,8 @@
 
 - (IBAction)updateSliderValue:(id)sender
 {
-//    [(GPUImagePixellateFilter *)filter setFractionalWidthOfAPixel:[(UISlider *)sender value]];
-//    [(GPUImageGammaFilter *)filter setGamma:[(UISlider *)sender value]];
+    //[(GPUImagePixellateFilter *)filter setFractionalWidthOfAPixel:[(UISlider *)sender value]];
+    //[(GPUImageGammaFilter *)filter setGamma:[(UISlider *)sender value]];
 }
 
 - (IBAction)takePhoto:(id)sender;
@@ -130,16 +115,6 @@
              });
          }];
     }];
-}
-
-- (void)spinToRandom:(id)sender {
-    [multiDialController spinToRandomString:YES];
-}
-
-#pragma mark MultiDialViewControllerDelegate methods
-
-- (void)multiDialViewController:(MultiDialViewController *)controller didSelectString:(NSString *)string {
-    
 }
 
 @end

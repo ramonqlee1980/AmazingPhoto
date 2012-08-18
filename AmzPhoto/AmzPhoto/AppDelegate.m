@@ -60,9 +60,9 @@
 #endif
     mNavi.navigationBarHidden = YES;
     
-    PagePhotoViewController* page = [[PagePhotoViewController alloc]init];        
-    [mNavi pushViewController:page animated:NO];
-    [page release];  
+    //PagePhotoViewController* page = [[PagePhotoViewController alloc]init];        
+    //[mNavi pushViewController:page animated:NO];
+    //[page release];  
     
     [self.window addSubview:mNavi.view];    
     
