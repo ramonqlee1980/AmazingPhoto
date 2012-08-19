@@ -1,12 +1,26 @@
 #import "PhotoViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+#define DIAL_OFFSET_X               40
+#define DIAL_OFFSET_Y               0
+#define DIAL_WIDTH                  150
+#define DIAL_HEIGHT                 40
+
 @interface PhotoViewController ()
 
 @end
 
 @implementation PhotoViewController
 
+-(void)dealloc
+{
+    [stillCamera release];
+    [filter release];
+    [filterSettingsSlider release];
+    
+    [daysData release];
+    [super dealloc];
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,7 +45,8 @@
     filterSettingsSlider.maximumValue = 3.0;
     filterSettingsSlider.value = 1.0;
     
-    [primaryView addSubview:filterSettingsSlider];
+    //[primaryView addSubview:filterSettingsSlider];
+    [filterSettingsSlider release];
     
     photoCaptureButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     photoCaptureButton.frame = CGRectMake(round(mainScreenFrame.size.width / 2.0 - 150.0 / 2.0), mainScreenFrame.size.height - 90.0, 150.0, 40.0);
@@ -41,6 +56,17 @@
     [photoCaptureButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     
     [primaryView addSubview:photoCaptureButton];
+    [photoCaptureButton release];
+    
+    daysData = [[NSArray alloc] initWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil];
+    
+    defaultPickerView = [[CPPickerView alloc] initWithFrame:CGRectMake(DIAL_OFFSET_X, DIAL_OFFSET_Y, DIAL_WIDTH, DIAL_HEIGHT)];
+    defaultPickerView.backgroundColor = [UIColor whiteColor];
+    defaultPickerView.dataSource = self;
+    defaultPickerView.delegate = self;
+    [defaultPickerView reloadData];
+    [primaryView addSubview:defaultPickerView];
+    [defaultPickerView release];
     
 	self.view = primaryView;	
 }
@@ -50,24 +76,13 @@
     [super viewDidLoad];
     
     stillCamera = [[GPUImageStillCamera alloc] init];
-//    stillCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
     stillCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-//    filter = [[GPUImageGammaFilter alloc] init];
-    filter = [[GPUImageSketchFilter alloc] init];
-//    [(GPUImageSketchFilter *)filter setTexelHeight:(1.0 / 1024.0)];
-//    [(GPUImageSketchFilter *)filter setTexelWidth:(1.0 / 768.0)];
-//    filter = [[GPUImageSmoothToonFilter alloc] init];
-//    filter = [[GPUImageSepiaFilter alloc] init];
-     	
+    filter = [[GPUImageSketchFilter alloc] init];    	
 	[filter prepareForImageCapture];
     
     [stillCamera addTarget:filter];
     GPUImageView *filterView = (GPUImageView *)self.view;
     [filter addTarget:filterView];
-    
-//    [stillCamera.inputCamera lockForConfiguration:nil];
-//    [stillCamera.inputCamera setFlashMode:AVCaptureFlashModeOn];
-//    [stillCamera.inputCamera unlockForConfiguration];
     
     [stillCamera startCameraCapture];
 }
@@ -115,6 +130,24 @@
              });
          }];
     }];
+}
+
+
+#pragma mark - CPPickerViewDataSource
+
+- (NSInteger)numberOfItemsInPickerView:(CPPickerView *)pickerView
+{
+    return [daysData count];
+}
+- (NSString *)pickerView:(CPPickerView *)pickerView titleForItem:(NSInteger)item
+{
+    return [daysData objectAtIndex:item];//[NSString stringWithFormat:@"%i", item + 1];
+}
+
+#pragma mark - CPPickerViewDelegate
+
+- (void)pickerView:(CPPickerView *)pickerView didSelectItem:(NSInteger)item
+{
 }
 
 @end

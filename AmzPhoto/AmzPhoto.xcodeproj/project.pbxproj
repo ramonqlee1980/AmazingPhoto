@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30839ADD15DF0B2E00B2C2C6 /* DialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30839AD315DF0B2E00B2C2C6 /* DialController.m */; };
-		30839ADE15DF0B2E00B2C2C6 /* GlowLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30839AD515DF0B2E00B2C2C6 /* GlowLabel.m */; };
-		30839ADF15DF0B2E00B2C2C6 /* MultiDialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30839AD715DF0B2E00B2C2C6 /* MultiDialViewController.m */; };
-		30839AE015DF0B2E00B2C2C6 /* Assets.fla in Resources */ = {isa = PBXBuildFile; fileRef = 30839AD915DF0B2E00B2C2C6 /* Assets.fla */; };
-		30839AE115DF0B2E00B2C2C6 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30839ADA15DF0B2E00B2C2C6 /* bg@2x.png */; };
-		30839AE315DF0B2E00B2C2C6 /* overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30839ADC15DF0B2E00B2C2C6 /* overlay@2x.png */; };
+		30877E0915E0B59200C872B1 /* CPPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30877E0215E0B59200C872B1 /* CPPickerView.m */; };
+		30877E0A15E0B59200C872B1 /* CPPickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30877E0415E0B59200C872B1 /* CPPickerViewCell.m */; };
+		30877E0B15E0B59200C872B1 /* horizontalPickerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30877E0515E0B59200C872B1 /* horizontalPickerShadow@2x.png */; };
+		30877E0C15E0B59200C872B1 /* shadowOverlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30877E0615E0B59200C872B1 /* shadowOverlay@2x.png */; };
+		30877E0D15E0B59200C872B1 /* stretchableGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30877E0715E0B59200C872B1 /* stretchableGlass@2x.png */; };
+		30877E0E15E0B59200C872B1 /* wheelBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30877E0815E0B59200C872B1 /* wheelBackground@2x.png */; };
+		30877E1D15E0B9FE00C872B1 /* ShowcaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30877E1B15E0B9FE00C872B1 /* ShowcaseFilterViewController.m */; };
+		30877E1E15E0B9FE00C872B1 /* ShowcaseFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30877E1C15E0B9FE00C872B1 /* ShowcaseFilterViewController.xib */; };
+		30877E2015E0BC4C00C872B1 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30877E1F15E0BC4C00C872B1 /* CoreImage.framework */; };
 		30970E3815E0548B00CD5117 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30970E3315E0546A00CD5117 /* libGPUImage.a */; };
 		C126B69315C4A14300613404 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69215C4A14300613404 /* UIKit.framework */; };
 		C126B69515C4A14300613404 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69415C4A14300613404 /* Foundation.framework */; };
@@ -89,15 +92,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30839AD215DF0B2E00B2C2C6 /* DialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialController.h; sourceTree = "<group>"; };
-		30839AD315DF0B2E00B2C2C6 /* DialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialController.m; sourceTree = "<group>"; };
-		30839AD415DF0B2E00B2C2C6 /* GlowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlowLabel.h; sourceTree = "<group>"; };
-		30839AD515DF0B2E00B2C2C6 /* GlowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlowLabel.m; sourceTree = "<group>"; };
-		30839AD615DF0B2E00B2C2C6 /* MultiDialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiDialViewController.h; sourceTree = "<group>"; };
-		30839AD715DF0B2E00B2C2C6 /* MultiDialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiDialViewController.m; sourceTree = "<group>"; };
-		30839AD915DF0B2E00B2C2C6 /* Assets.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Assets.fla; sourceTree = "<group>"; };
-		30839ADA15DF0B2E00B2C2C6 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
-		30839ADC15DF0B2E00B2C2C6 /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
+		30877E0115E0B59200C872B1 /* CPPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPickerView.h; sourceTree = "<group>"; };
+		30877E0215E0B59200C872B1 /* CPPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPPickerView.m; sourceTree = "<group>"; };
+		30877E0315E0B59200C872B1 /* CPPickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPPickerViewCell.h; sourceTree = "<group>"; };
+		30877E0415E0B59200C872B1 /* CPPickerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPPickerViewCell.m; sourceTree = "<group>"; };
+		30877E0515E0B59200C872B1 /* horizontalPickerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "horizontalPickerShadow@2x.png"; sourceTree = "<group>"; };
+		30877E0615E0B59200C872B1 /* shadowOverlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadowOverlay@2x.png"; sourceTree = "<group>"; };
+		30877E0715E0B59200C872B1 /* stretchableGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stretchableGlass@2x.png"; sourceTree = "<group>"; };
+		30877E0815E0B59200C872B1 /* wheelBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wheelBackground@2x.png"; sourceTree = "<group>"; };
+		30877E1A15E0B9FE00C872B1 /* ShowcaseFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowcaseFilterViewController.h; sourceTree = "<group>"; };
+		30877E1B15E0B9FE00C872B1 /* ShowcaseFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowcaseFilterViewController.m; sourceTree = "<group>"; };
+		30877E1C15E0B9FE00C872B1 /* ShowcaseFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowcaseFilterViewController.xib; sourceTree = "<group>"; };
+		30877E1F15E0BC4C00C872B1 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		30970E2915E0546A00CD5117 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		30970E3915E054A200CD5117 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImage.h; path = framework/Source/GPUImage.h; sourceTree = SOURCE_ROOT; };
 		30D5902615DFCCF1000C0C6A /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/GPUImage.xcodeproj; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30877E2015E0BC4C00C872B1 /* CoreImage.framework in Frameworks */,
 				30970E3815E0548B00CD5117 /* libGPUImage.a in Frameworks */,
 				C17E26EF15D1D25E00C5C781 /* libsqlite3.0.dylib in Frameworks */,
 				C17E26ED15D1D1F200C5C781 /* CoreData.framework in Frameworks */,
@@ -169,28 +176,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30839AD115DF0B2E00B2C2C6 /* DialController */ = {
+		30877E0015E0B59200C872B1 /* CPPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				30839AD215DF0B2E00B2C2C6 /* DialController.h */,
-				30839AD315DF0B2E00B2C2C6 /* DialController.m */,
-				30839AD415DF0B2E00B2C2C6 /* GlowLabel.h */,
-				30839AD515DF0B2E00B2C2C6 /* GlowLabel.m */,
-				30839AD615DF0B2E00B2C2C6 /* MultiDialViewController.h */,
-				30839AD715DF0B2E00B2C2C6 /* MultiDialViewController.m */,
-				30839AD815DF0B2E00B2C2C6 /* Resources */,
+				30877E0115E0B59200C872B1 /* CPPickerView.h */,
+				30877E0215E0B59200C872B1 /* CPPickerView.m */,
+				30877E0315E0B59200C872B1 /* CPPickerViewCell.h */,
+				30877E0415E0B59200C872B1 /* CPPickerViewCell.m */,
+				30877E0515E0B59200C872B1 /* horizontalPickerShadow@2x.png */,
+				30877E0615E0B59200C872B1 /* shadowOverlay@2x.png */,
+				30877E0715E0B59200C872B1 /* stretchableGlass@2x.png */,
+				30877E0815E0B59200C872B1 /* wheelBackground@2x.png */,
 			);
-			path = DialController;
-			sourceTree = "<group>";
-		};
-		30839AD815DF0B2E00B2C2C6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				30839AD915DF0B2E00B2C2C6 /* Assets.fla */,
-				30839ADA15DF0B2E00B2C2C6 /* bg@2x.png */,
-				30839ADC15DF0B2E00B2C2C6 /* overlay@2x.png */,
-			);
-			path = Resources;
+			path = CPPickerView;
 			sourceTree = "<group>";
 		};
 		30970E2A15E0546A00CD5117 /* Products */ = {
@@ -231,6 +229,7 @@
 		C126B69115C4A14300613404 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30877E1F15E0BC4C00C872B1 /* CoreImage.framework */,
 				30970E2915E0546A00CD5117 /* GPUImage.xcodeproj */,
 				30D5902615DFCCF1000C0C6A /* GPUImage.xcodeproj */,
 				C17E26EE15D1D25E00C5C781 /* libsqlite3.0.dylib */,
@@ -253,8 +252,11 @@
 		C126B69815C4A14300613404 /* E3 */ = {
 			isa = PBXGroup;
 			children = (
+				30877E1A15E0B9FE00C872B1 /* ShowcaseFilterViewController.h */,
+				30877E1B15E0B9FE00C872B1 /* ShowcaseFilterViewController.m */,
+				30877E1C15E0B9FE00C872B1 /* ShowcaseFilterViewController.xib */,
+				30877E0015E0B59200C872B1 /* CPPickerView */,
 				30970E3915E054A200CD5117 /* GPUImage.h */,
-				30839AD115DF0B2E00B2C2C6 /* DialController */,
 				C1ED5C8815D29EB80072AAB0 /* PagePhotos */,
 				C17E26D915D1D14300C5C781 /* AviarySDK */,
 				C17E26E315D1D14300C5C781 /* sample */,
@@ -435,9 +437,11 @@
 				C1ED5C9415D29EC20072AAB0 /* 1933_3.jpg in Resources */,
 				C1ED5C9515D29EC20072AAB0 /* 1933_4.jpg in Resources */,
 				C1ED5C9615D29EC20072AAB0 /* 1933_5.jpg in Resources */,
-				30839AE015DF0B2E00B2C2C6 /* Assets.fla in Resources */,
-				30839AE115DF0B2E00B2C2C6 /* bg@2x.png in Resources */,
-				30839AE315DF0B2E00B2C2C6 /* overlay@2x.png in Resources */,
+				30877E0B15E0B59200C872B1 /* horizontalPickerShadow@2x.png in Resources */,
+				30877E0C15E0B59200C872B1 /* shadowOverlay@2x.png in Resources */,
+				30877E0D15E0B59200C872B1 /* stretchableGlass@2x.png in Resources */,
+				30877E0E15E0B59200C872B1 /* wheelBackground@2x.png in Resources */,
+				30877E1E15E0B9FE00C872B1 /* ShowcaseFilterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,9 +457,9 @@
 				C17E26BA15D1CF8300C5C781 /* PhotoViewController.m in Sources */,
 				C1ED5C8C15D29EB80072AAB0 /* PagePhotosView.m in Sources */,
 				C1C9610B15D5B49000439289 /* PagePhotoViewController.m in Sources */,
-				30839ADD15DF0B2E00B2C2C6 /* DialController.m in Sources */,
-				30839ADE15DF0B2E00B2C2C6 /* GlowLabel.m in Sources */,
-				30839ADF15DF0B2E00B2C2C6 /* MultiDialViewController.m in Sources */,
+				30877E0915E0B59200C872B1 /* CPPickerView.m in Sources */,
+				30877E0A15E0B59200C872B1 /* CPPickerViewCell.m in Sources */,
+				30877E1D15E0B9FE00C872B1 /* ShowcaseFilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

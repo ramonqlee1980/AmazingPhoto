@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PagePhotoViewController.h"
 #import "PhotoViewController.h"
+#import "ShowcaseFilterViewController.h"
 
 @implementation AppDelegate
 
@@ -51,7 +52,8 @@
     [editorController release];
 #else 
     // Override point for customization after application launch.
-    PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
+    //PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
+    ShowcaseFilterViewController *rootViewController = [[ShowcaseFilterViewController alloc] initWithFilterType:GPUIMAGE_SATURATION];
     rootViewController.view.frame = [[UIScreen mainScreen] bounds];
     mNavi = [[UINavigationController alloc]initWithRootViewController:rootViewController];
     //[self.window addSubview:rootViewController.view];
