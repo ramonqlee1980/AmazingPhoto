@@ -2,7 +2,7 @@
 #import <CoreImage/CoreImage.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-#define DIAL_OFFSET_X               10
+#define DIAL_OFFSET_X               0
 #define DIAL_OFFSET_Y               0
 #define DIAL_WIDTH                  300
 #define DIAL_HEIGHT                 40
@@ -17,6 +17,14 @@
 #pragma dealloc
 -(void)dealloc
 {
+    if (videoCamera) {
+        [videoCamera release];
+    }
+    if(filter)
+    {
+        [filter release];
+    }
+
     [mEffectsListData release];
     [super dealloc];
 }
@@ -48,6 +56,7 @@
                  [photoCaptureButton setEnabled:YES];
              });
          }];
+        [library release];
     }];
 }
 
@@ -58,28 +67,24 @@
     // Yes, I know I'm a caveman for doing all this by hand
 	GPUImageView *primaryView = [[GPUImageView alloc] initWithFrame:mainScreenFrame];
 	primaryView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.view = primaryView;	
+	
+    photoCaptureButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
+                                                                               target:self
+                                                                               action:@selector(takePhoto:)];
+    self.navigationItem.rightBarButtonItem = photoCaptureButton;
+    [photoCaptureButton release];
     
-    
-    photoCaptureButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    photoCaptureButton.frame = CGRectMake(round(mainScreenFrame.size.width / 2.0 - 150.0 / 2.0), mainScreenFrame.size.height - 90.0, 150.0, 40.0);
-    [photoCaptureButton setTitle:@"Capture Photo" forState:UIControlStateNormal];
-	photoCaptureButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    [photoCaptureButton addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchUpInside];
-    [photoCaptureButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-    
-    [primaryView addSubview:photoCaptureButton];
-    
-    [self initEffectList];
-    
-    defaultPickerView = [[CPPickerView alloc] initWithFrame:CGRectMake(DIAL_OFFSET_X, DIAL_OFFSET_Y, DIAL_WIDTH, DIAL_HEIGHT)];
+    [self initEffectList];    
+    CPPickerView* defaultPickerView = [[CPPickerView alloc] initWithFrame:CGRectMake(DIAL_OFFSET_X, DIAL_OFFSET_Y, DIAL_WIDTH, DIAL_HEIGHT)];
     defaultPickerView.backgroundColor = [UIColor whiteColor];
     defaultPickerView.dataSource = self;
     defaultPickerView.delegate = self;
     [defaultPickerView reloadData];
-    [primaryView addSubview:defaultPickerView];
+    UIBarButtonItem *pickerViewItem = [[UIBarButtonItem alloc] initWithCustomView:defaultPickerView];
     [defaultPickerView release];
-    
-	self.view = primaryView;	
+	self.navigationItem.leftBarButtonItem = pickerViewItem;
+    [pickerViewItem release];
 }
 -(void)initEffectList
 {
@@ -89,7 +94,7 @@
 {
     self = [super initWithNibName:@"ShowcaseFilterViewController" bundle:nil];
     if (self) 
-    {
+    {        
         filterType = newFilterType;
     }
     return self;
@@ -137,9 +142,18 @@
 
 - (void)setupFilter
 {
-    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
-    //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
-    videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    //release first
+    if (videoCamera==nil) {
+        //videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+        //    videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
+        videoCamera = [[GPUImageStillCamera alloc] init];
+        videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    }
+    if(filter)
+    {
+        [filter release];
+    }   
+    
     facesSwitch.hidden = YES;
     facesLabel.hidden = YES;
     BOOL needsSecondImage = NO;
@@ -777,6 +791,7 @@
             sourcePicture = [[GPUImagePicture alloc] initWithImage:[UIImage imageNamed:@"voroni_points2.png"]];
             
             [sourcePicture addTarget:jfa];
+            [jfa release];
             
             filter = [[GPUImageVoroniConsumerFilter alloc] init];
             
@@ -1062,9 +1077,11 @@
             
             GPUImageSepiaFilter *sepiaFilter = [[GPUImageSepiaFilter alloc] init];
             [(GPUImageFilterGroup *)filter addFilter:sepiaFilter];
+            [sepiaFilter release];
             
             GPUImagePixellateFilter *pixellateFilter = [[GPUImagePixellateFilter alloc] init];
             [(GPUImageFilterGroup *)filter addFilter:pixellateFilter];
+            [pixellateFilter release];
             
             [sepiaFilter addTarget:pixellateFilter];
             [(GPUImageFilterGroup *)filter setInitialFilters:[NSArray arrayWithObject:sepiaFilter]];
@@ -1141,17 +1158,20 @@
             GPUImageGammaFilter *gammaFilter = [[GPUImageGammaFilter alloc] init];
             [videoCamera addTarget:gammaFilter];
             [gammaFilter addTarget:filter];
+            [gammaFilter release];
             
             GPUImageHistogramGenerator *histogramGraph = [[GPUImageHistogramGenerator alloc] init];
             
             [histogramGraph forceProcessingAtSize:CGSizeMake(256.0, 330.0)];
             [filter addTarget:histogramGraph];
+            [histogramGraph release];
             
             GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc] init];
             blendFilter.mix = 0.75;            
             [blendFilter forceProcessingAtSize:CGSizeMake(256.0, 330.0)];
             
             [videoCamera addTarget:blendFilter];
+            [blendFilter release];
             [histogramGraph addTarget:blendFilter];
             
             [blendFilter addTarget:filterView];
@@ -1170,7 +1190,9 @@
             [blendFilter forceProcessingAtSize:CGSizeMake(480.0, 640.0)];
             GPUImageGammaFilter *gammaFilter = [[GPUImageGammaFilter alloc] init];
             [videoCamera addTarget:gammaFilter];
+            [gammaFilter release];
             [gammaFilter addTarget:blendFilter];
+            [blendFilter release];
             
             [crosshairGenerator addTarget:blendFilter];
             
@@ -1193,6 +1215,7 @@
             uiElementInput = [[GPUImageUIElement alloc] initWithView:timeLabel];
             
             [filter addTarget:blendFilter];
+            [blendFilter release];
             [uiElementInput addTarget:blendFilter];
             
             [blendFilter addTarget:filterView];
@@ -1213,7 +1236,9 @@
             
             GPUImageGammaFilter *gammaFilter = [[GPUImageGammaFilter alloc] init];
             [videoCamera addTarget:gammaFilter];
+            [gammaFilter release];
             [gammaFilter addTarget:blendFilter];
+            [blendFilter release];
             [videoCamera addTarget:filter];
             
             [filter addTarget:blendFilter];
@@ -1229,6 +1254,7 @@
             GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc] init];
             blendFilter.mix = 1.0;
             [sourcePicture addTarget:blendFilter];
+            [blendFilter release];
             [filter addTarget:blendFilter];
             
             [blendFilter addTarget:filterView];
@@ -1238,11 +1264,13 @@
             // Provide a blurred image for a cool-looking background
             GPUImageGaussianBlurFilter *gaussianBlur = [[GPUImageGaussianBlurFilter alloc] init];
             [videoCamera addTarget:gaussianBlur];
+            [gaussianBlur release];
             gaussianBlur.blurSize = 2.0;
             
             GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc] init];
             blendFilter.mix = 1.0;
             [gaussianBlur addTarget:blendFilter];
+            [blendFilter release];
             [filter addTarget:blendFilter];
             
             [blendFilter addTarget:filterView];
@@ -1254,6 +1282,9 @@
             
         }
     } 
+    
+    //clear title
+    self.title = @"";
     
     [videoCamera startCameraCapture];
 }
@@ -1419,7 +1450,7 @@
     NSLog(@"Face Detector %@", [self.faceDetector description]);
     NSLog(@"converted Image %@", [convertedImage description]);
     NSArray *features = [self.faceDetector featuresInImage:convertedImage options:imageOptions];
-    
+    [convertedImage release];
     
     // get the clean aperture
     // the clean aperture is a rectangle that defines the portion of the encoded pixel dimensions
@@ -1489,6 +1520,8 @@
             // add the new view to create a box around the face
             [self.view addSubview:faceView];
             
+            [faceView release];
+            
         }
     });
     
@@ -1523,6 +1556,8 @@
 
 - (void)pickerView:(CPPickerView *)pickerView didSelectItem:(NSInteger)item
 {
+    filterType = item;
+    [self setupFilter];
 }
 
 #pragma mark -

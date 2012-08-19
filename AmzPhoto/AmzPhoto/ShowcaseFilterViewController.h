@@ -117,8 +117,7 @@ typedef enum {
     __unsafe_unretained UISlider *_filterSettingsSlider;
     BOOL faceThinking;
     
-    UIButton *photoCaptureButton;
-    CPPickerView *defaultPickerView;
+    UIBarButtonItem *photoCaptureButton;
     NSArray *mEffectsListData;
 }
 

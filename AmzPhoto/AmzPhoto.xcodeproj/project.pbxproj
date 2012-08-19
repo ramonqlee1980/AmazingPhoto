@@ -23,7 +23,6 @@
 		C126B69D15C4A14300613404 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C126B69B15C4A14300613404 /* InfoPlist.strings */; };
 		C126B69F15C4A14300613404 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C126B69E15C4A14300613404 /* main.m */; };
 		C126B6A315C4A14300613404 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C126B6A215C4A14300613404 /* AppDelegate.m */; };
-		C17E26BA15D1CF8300C5C781 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C17E26B915D1CF8300C5C781 /* PhotoViewController.m */; };
 		C17E26CD15D1D0BA00C5C781 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17E26CC15D1D0BA00C5C781 /* CoreMedia.framework */; };
 		C17E26D015D1D0C000C5C781 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17E26CF15D1D0C000C5C781 /* CoreVideo.framework */; };
 		C17E26D215D1D0CD00C5C781 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17E26D115D1D0CD00C5C781 /* OpenGLES.framework */; };
@@ -117,8 +116,6 @@
 		C126B6A015C4A14300613404 /* AmzPhoto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AmzPhoto-Prefix.pch"; sourceTree = "<group>"; };
 		C126B6A115C4A14300613404 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C126B6A215C4A14300613404 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C17E26B815D1CF8300C5C781 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		C17E26B915D1CF8300C5C781 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		C17E26CC15D1D0BA00C5C781 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		C17E26CF15D1D0C000C5C781 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C17E26D115D1D0CD00C5C781 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -212,7 +209,7 @@
 		C126B68315C4A14200613404 = {
 			isa = PBXGroup;
 			children = (
-				C126B69815C4A14300613404 /* E3 */,
+				C126B69815C4A14300613404 /* AmzPhoto */,
 				C126B69115C4A14300613404 /* Frameworks */,
 				C126B68F15C4A14300613404 /* Products */,
 			);
@@ -249,7 +246,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C126B69815C4A14300613404 /* E3 */ = {
+		C126B69815C4A14300613404 /* AmzPhoto */ = {
 			isa = PBXGroup;
 			children = (
 				30877E1A15E0B9FE00C872B1 /* ShowcaseFilterViewController.h */,
@@ -260,13 +257,10 @@
 				C1ED5C8815D29EB80072AAB0 /* PagePhotos */,
 				C17E26D915D1D14300C5C781 /* AviarySDK */,
 				C17E26E315D1D14300C5C781 /* sample */,
-				C17E26B815D1CF8300C5C781 /* PhotoViewController.h */,
-				C17E26B915D1CF8300C5C781 /* PhotoViewController.m */,
 				C126B6A115C4A14300613404 /* AppDelegate.h */,
 				C126B6A215C4A14300613404 /* AppDelegate.m */,
 				C126B69915C4A14300613404 /* Supporting Files */,
 			);
-			name = E3;
 			path = AmzPhoto;
 			sourceTree = "<group>";
 		};
@@ -454,7 +448,6 @@
 			files = (
 				C126B69F15C4A14300613404 /* main.m in Sources */,
 				C126B6A315C4A14300613404 /* AppDelegate.m in Sources */,
-				C17E26BA15D1CF8300C5C781 /* PhotoViewController.m in Sources */,
 				C1ED5C8C15D29EB80072AAB0 /* PagePhotosView.m in Sources */,
 				C1C9610B15D5B49000439289 /* PagePhotoViewController.m in Sources */,
 				30877E0915E0B59200C872B1 /* CPPickerView.m in Sources */,
