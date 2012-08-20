@@ -1,6 +1,7 @@
 #import "ShowcaseFilterViewController.h"
 #import <CoreImage/CoreImage.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "SingleImageViewController.h"
 
 #define DIAL_OFFSET_X               0
 #define DIAL_OFFSET_Y               0
@@ -54,6 +55,11 @@
              runOnMainQueueWithoutDeadlocking(^{
                  //                 report_memory(@"Operation completed");
                  [photoCaptureButton setEnabled:YES];
+                 
+                 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
+                 UIImage* image = [UIImage imageWithContentsOfFile:filePath];
+                 SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
+                 [self.navigationController pushViewController:viewController animated:YES];
              });
          }];
         [library release];
