@@ -10,7 +10,7 @@
 #import "PagePhotoViewController.h"
 #import "PhotoViewController.h"
 #import "ShowcaseFilterViewController.h"
-
+#import "iCarouselExampleViewController.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -53,18 +53,15 @@
 #else 
     // Override point for customization after application launch.
     //PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
-    ShowcaseFilterViewController *rootViewController = [[ShowcaseFilterViewController alloc] initWithFilterType:GPUIMAGE_SATURATION];
+    //ShowcaseFilterViewController *rootViewController = [[ShowcaseFilterViewController alloc] initWithFilterType:GPUIMAGE_SATURATION];
+    iCarouselExampleViewController* rootViewController = [[iCarouselExampleViewController alloc]initWithNibName:@"iCarouselExampleViewController" bundle:nil];
     rootViewController.view.frame = [[UIScreen mainScreen] bounds];
     mNavi = [[UINavigationController alloc]initWithRootViewController:rootViewController];
     //[self.window addSubview:rootViewController.view];
     //self.window.rootViewController = rootViewController;
     [rootViewController release];
 #endif
-    mNavi.navigationBarHidden = NO;
-    
-    //PagePhotoViewController* page = [[PagePhotoViewController alloc]init];        
-    //[mNavi pushViewController:page animated:NO];
-    //[page release];  
+    mNavi.navigationBarHidden = YES;
     
     [self.window addSubview:mNavi.view];    
     

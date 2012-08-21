@@ -34,6 +34,7 @@
 
 - (IBAction)takePhoto:(id)sender;
 {
+#if 0
     [photoCaptureButton setEnabled:NO];
     
     [videoCamera capturePhotoAsJPEGProcessedUpToFilter:filter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
@@ -64,6 +65,13 @@
          }];
         [library release];
     }];
+#else
+       
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
+    UIImage* image = [UIImage imageWithContentsOfFile:filePath];
+    SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
+    [self.navigationController pushViewController:viewController animated:YES];
+#endif
 }
 
 - (void)loadView 

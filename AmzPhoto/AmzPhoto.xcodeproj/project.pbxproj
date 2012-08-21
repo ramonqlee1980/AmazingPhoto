@@ -104,6 +104,11 @@
 		C17E26ED15D1D1F200C5C781 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C17E26EC15D1D1F200C5C781 /* CoreData.framework */; };
 		C17E26EF15D1D25E00C5C781 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C17E26EE15D1D25E00C5C781 /* libsqlite3.0.dylib */; };
 		C1C9610B15D5B49000439289 /* PagePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9610A15D5B49000439289 /* PagePhotoViewController.m */; };
+		C1E9328F15E31BA300C09B86 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E9328E15E31BA300C09B86 /* iCarousel.m */; };
+		C1E9329215E31BB700C09B86 /* iCarouselExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E9329115E31BB700C09B86 /* iCarouselExampleViewController.m */; };
+		C1E9329415E31BC100C09B86 /* iCarouselExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E9329315E31BC100C09B86 /* iCarouselExampleViewController.xib */; };
+		C1E9329715E31C7E00C09B86 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E9329515E31C7E00C09B86 /* background.png */; };
+		C1E9329815E31C7E00C09B86 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = C1E9329615E31C7E00C09B86 /* page.png */; };
 		C1ED5C8C15D29EB80072AAB0 /* PagePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1ED5C8B15D29EB80072AAB0 /* PagePhotosView.m */; };
 		C1ED5C9215D29EC20072AAB0 /* 1933_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1ED5C8D15D29EC20072AAB0 /* 1933_1.jpg */; };
 		C1ED5C9315D29EC20072AAB0 /* 1933_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1ED5C8E15D29EC20072AAB0 /* 1933_2.jpg */; };
@@ -272,6 +277,13 @@
 		C17E26EE15D1D25E00C5C781 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		C1C9610915D5B49000439289 /* PagePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagePhotoViewController.h; sourceTree = "<group>"; };
 		C1C9610A15D5B49000439289 /* PagePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagePhotoViewController.m; sourceTree = "<group>"; };
+		C1E9328D15E31BA300C09B86 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		C1E9328E15E31BA300C09B86 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		C1E9329015E31BB700C09B86 /* iCarouselExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarouselExampleViewController.h; sourceTree = "<group>"; };
+		C1E9329115E31BB700C09B86 /* iCarouselExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarouselExampleViewController.m; sourceTree = "<group>"; };
+		C1E9329315E31BC100C09B86 /* iCarouselExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iCarouselExampleViewController.xib; sourceTree = "<group>"; };
+		C1E9329515E31C7E00C09B86 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		C1E9329615E31C7E00C09B86 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		C1ED5C8915D29EB80072AAB0 /* PagePhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagePhotosDataSource.h; sourceTree = "<group>"; };
 		C1ED5C8A15D29EB80072AAB0 /* PagePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagePhotosView.h; sourceTree = "<group>"; };
 		C1ED5C8B15D29EB80072AAB0 /* PagePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagePhotosView.m; sourceTree = "<group>"; };
@@ -458,6 +470,10 @@
 		C126B69815C4A14300613404 /* AmzPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				C1E9329315E31BC100C09B86 /* iCarouselExampleViewController.xib */,
+				C1E9329015E31BB700C09B86 /* iCarouselExampleViewController.h */,
+				C1E9329115E31BB700C09B86 /* iCarouselExampleViewController.m */,
+				C1E9328C15E31BA300C09B86 /* iCarousel */,
 				3092B8D815E2F85500AE4032 /* SingleImageViewController.h */,
 				3092B8D915E2F85500AE4032 /* SingleImageViewController.m */,
 				3092B8DA15E2F85500AE4032 /* youku */,
@@ -520,10 +536,21 @@
 		C17E26E315D1D14300C5C781 /* sample */ = {
 			isa = PBXGroup;
 			children = (
+				C1E9329515E31C7E00C09B86 /* background.png */,
+				C1E9329615E31C7E00C09B86 /* page.png */,
 				3092B8D715E2F85500AE4032 /* image.png */,
 				C17E26E415D1D14300C5C781 /* Default.png */,
 			);
 			path = sample;
+			sourceTree = "<group>";
+		};
+		C1E9328C15E31BA300C09B86 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				C1E9328D15E31BA300C09B86 /* iCarousel.h */,
+				C1E9328E15E31BA300C09B86 /* iCarousel.m */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 		C1ED5C8815D29EB80072AAB0 /* PagePhotos */ = {
@@ -714,6 +741,9 @@
 				3092B95D15E2F85600AE4032 /* mvideo@2x.png in Resources */,
 				3092B95E15E2F85600AE4032 /* mvideoh.png in Resources */,
 				3092B95F15E2F85600AE4032 /* mvideoh@2x.png in Resources */,
+				C1E9329415E31BC100C09B86 /* iCarouselExampleViewController.xib in Resources */,
+				C1E9329715E31C7E00C09B86 /* background.png in Resources */,
+				C1E9329815E31C7E00C09B86 /* page.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +763,8 @@
 				30877E1D15E0B9FE00C872B1 /* ShowcaseFilterViewController.m in Sources */,
 				3092B91E15E2F85500AE4032 /* SingleImageViewController.m in Sources */,
 				3092B92F15E2F85500AE4032 /* HHYoukuMenuView.m in Sources */,
+				C1E9328F15E31BA300C09B86 /* iCarousel.m in Sources */,
+				C1E9329215E31BB700C09B86 /* iCarouselExampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
