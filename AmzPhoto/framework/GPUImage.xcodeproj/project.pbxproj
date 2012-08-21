@@ -305,6 +305,7 @@
 		0D9D91AE15011CA200A5BC83 /* GPUImageGaussianSelectiveBlurFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GPUImageGaussianSelectiveBlurFilter.m; path = Source/GPUImageGaussianSelectiveBlurFilter.m; sourceTree = SOURCE_ROOT; };
 		0DF3FA2914FA00C9006AF7D9 /* GPUImageVignetteFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImageVignetteFilter.h; path = Source/GPUImageVignetteFilter.h; sourceTree = SOURCE_ROOT; };
 		0DF3FA2A14FA00C9006AF7D9 /* GPUImageVignetteFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GPUImageVignetteFilter.m; path = Source/GPUImageVignetteFilter.m; sourceTree = SOURCE_ROOT; };
+		30FE1B4B15E4470D0013EE24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/ramonqlee/Desktop/Project/AmazingPhoto/AmzPhoto/framework/GPUImageTests/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		4686952D155AACAC0060BA43 /* GPUImageSourceOverBlendFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImageSourceOverBlendFilter.h; path = Source/GPUImageSourceOverBlendFilter.h; sourceTree = SOURCE_ROOT; };
 		4686952E155AACAC0060BA43 /* GPUImageSourceOverBlendFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GPUImageSourceOverBlendFilter.m; path = Source/GPUImageSourceOverBlendFilter.m; sourceTree = SOURCE_ROOT; };
 		6D13DBE4151AA804000B23BA /* GPUImageHazeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImageHazeFilter.h; path = Source/GPUImageHazeFilter.h; sourceTree = SOURCE_ROOT; };
@@ -1376,6 +1377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BCF1A35114DDB1EC00852800 /* en */,
+				30FE1B4B15E4470D0013EE24 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

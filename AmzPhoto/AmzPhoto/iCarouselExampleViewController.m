@@ -7,7 +7,9 @@
 //
 
 #import "iCarouselExampleViewController.h"
-
+#import "ShowcaseFilterViewController.h"
+#import "SingleImageViewController.h"
+#import "AFPhotoEditorController.h"
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -83,12 +85,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad];    
     
     //configure carousel
     carousel.decelerationRate = 0.5;
     carousel.type = iCarouselTypeCoverFlow2;
-    navItem.title = @"CoverFlow2";
+    navItem.title = NSLocalizedString(@"AppName", "");
 }
 
 - (void)viewDidUnload
@@ -266,4 +268,72 @@
     return wrap;
 }
 
+- (IBAction)camera
+{    
+    self.navigationController.navigationBarHidden = NO;
+    ShowcaseFilterViewController *rootViewController = [[ShowcaseFilterViewController alloc] initWithFilterType:GPUIMAGE_SATURATION];
+    [self.navigationController pushViewController:rootViewController animated:YES];
+    [rootViewController release];
+}
+#pragma mark AFPhotoEditorControllerDelegate
+- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
+{
+    // Handle the result image here
+    if (image != nil) {  
+        SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
+        [self.navigationController pushViewController:viewController animated:YES];
+        [viewController release];  
+    } 
+    
+    //关闭图像选择器  
+    [self dismissModalViewControllerAnimated:YES];  
+}
+
+- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
+{
+    // Handle cancelation here
+    [editor dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissModalViewControllerAnimated:YES];
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if(image)
+    {       
+        AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:image];
+        [editorController setDelegate:self];
+        [self presentModalViewController:editorController animated:YES];        
+        [editorController release];
+    }
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
+#pragma action
+- (IBAction)album
+{  
+    //获取图片选取器  
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];  
+    //指定代理  
+    imagePicker.delegate = self;  
+    //打开图片后允许编辑  
+    imagePicker.allowsEditing = YES;  
+    
+    //判断图片源的类型  
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){  
+        //图片库  
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;  
+    } 
+    
+    
+    //打开图片选择模态视图  
+    [self presentModalViewController:imagePicker animated:YES];  
+    [imagePicker release];  
+    
+}  
 @end

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
+#import "AFPhotoEditorController.h"
 
 
-@interface iCarouselExampleViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+@interface iCarouselExampleViewController : UIViewController <iCarouselDataSource, iCarouselDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AFPhotoEditorControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet iCarousel *carousel;
 @property (nonatomic, retain) IBOutlet UINavigationItem *navItem;
@@ -22,5 +23,8 @@
 - (IBAction)toggleWrap;
 - (IBAction)insertItem;
 - (IBAction)removeItem;
+
+- (IBAction)camera;
+- (IBAction)album;
 
 @end

@@ -14,16 +14,6 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-#pragma mark AFPhotoEditorControllerDelegate
-- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
-{
-    // Handle the result image here
-}
-
-- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
-{
-    // Handle cancelation here
-}
 
 -(void)pageScrollDone
 {
@@ -52,8 +42,6 @@
     [editorController release];
 #else 
     // Override point for customization after application launch.
-    //PhotoViewController* rootViewController = [[PhotoViewController alloc] initWithNibName:nil bundle:nil];
-    //ShowcaseFilterViewController *rootViewController = [[ShowcaseFilterViewController alloc] initWithFilterType:GPUIMAGE_SATURATION];
     iCarouselExampleViewController* rootViewController = [[iCarouselExampleViewController alloc]initWithNibName:@"iCarouselExampleViewController" bundle:nil];
     rootViewController.view.frame = [[UIScreen mainScreen] bounds];
     mNavi = [[UINavigationController alloc]initWithRootViewController:rootViewController];

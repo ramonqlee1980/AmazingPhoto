@@ -56,21 +56,23 @@
              runOnMainQueueWithoutDeadlocking(^{
                  //                 report_memory(@"Operation completed");
                  [photoCaptureButton setEnabled:YES];
-                 
+                 self.navigationController.navigationBarHidden = YES;
                  NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
                  UIImage* image = [UIImage imageWithContentsOfFile:filePath];
                  SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
                  [self.navigationController pushViewController:viewController animated:YES];
+                 [viewController release];
              });
          }];
         [library release];
     }];
 #else
-       
+    self.navigationController.navigationBarHidden = YES;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
     UIImage* image = [UIImage imageWithContentsOfFile:filePath];
     SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
     [self.navigationController pushViewController:viewController animated:YES];
+    [viewController release];
 #endif
 }
 

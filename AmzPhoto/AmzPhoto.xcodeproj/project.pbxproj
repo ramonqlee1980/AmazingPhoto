@@ -84,6 +84,8 @@
 		3092B95E15E2F85600AE4032 /* mvideoh.png in Resources */ = {isa = PBXBuildFile; fileRef = 3092B91B15E2F85500AE4032 /* mvideoh.png */; };
 		3092B95F15E2F85600AE4032 /* mvideoh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3092B91C15E2F85500AE4032 /* mvideoh@2x.png */; };
 		30970E3815E0548B00CD5117 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30970E3315E0546A00CD5117 /* libGPUImage.a */; };
+		30FE1AFE15E439AA0013EE24 /* SingleImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FE1AFD15E439AA0013EE24 /* SingleImageViewController.xib */; };
+		30FE1B4D15E447240013EE24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30FE1B4F15E447240013EE24 /* Localizable.strings */; };
 		C126B69315C4A14300613404 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69215C4A14300613404 /* UIKit.framework */; };
 		C126B69515C4A14300613404 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69415C4A14300613404 /* Foundation.framework */; };
 		C126B69715C4A14300613404 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C126B69615C4A14300613404 /* CoreGraphics.framework */; };
@@ -247,6 +249,10 @@
 		30970E2915E0546A00CD5117 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		30970E3915E054A200CD5117 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImage.h; path = framework/Source/GPUImage.h; sourceTree = SOURCE_ROOT; };
 		30D5902615DFCCF1000C0C6A /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		30FE1AFD15E439AA0013EE24 /* SingleImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImageViewController.xib; sourceTree = "<group>"; };
+		30FE1B4C15E4470D0013EE24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/ramonqlee/Desktop/Project/AmazingPhoto/AmzPhoto/AmzPhoto/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		30FE1B4E15E447240013EE24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		30FE1B5015E4472E0013EE24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C126B68E15C4A14300613404 /* AmzPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmzPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C126B69215C4A14300613404 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C126B69415C4A14300613404 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -470,6 +476,7 @@
 		C126B69815C4A14300613404 /* AmzPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				30FE1AFD15E439AA0013EE24 /* SingleImageViewController.xib */,
 				C1E9329315E31BC100C09B86 /* iCarouselExampleViewController.xib */,
 				C1E9329015E31BB700C09B86 /* iCarouselExampleViewController.h */,
 				C1E9329115E31BB700C09B86 /* iCarouselExampleViewController.m */,
@@ -499,6 +506,7 @@
 				C126B69B15C4A14300613404 /* InfoPlist.strings */,
 				C126B69E15C4A14300613404 /* main.m */,
 				C126B6A015C4A14300613404 /* AmzPhoto-Prefix.pch */,
+				30FE1B4F15E447240013EE24 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -606,6 +614,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = C126B68315C4A14200613404;
 			productRefGroup = C126B68F15C4A14300613404 /* Products */;
@@ -744,6 +753,8 @@
 				C1E9329415E31BC100C09B86 /* iCarouselExampleViewController.xib in Resources */,
 				C1E9329715E31C7E00C09B86 /* background.png in Resources */,
 				C1E9329815E31C7E00C09B86 /* page.png in Resources */,
+				30FE1AFE15E439AA0013EE24 /* SingleImageViewController.xib in Resources */,
+				30FE1B4D15E447240013EE24 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,10 +795,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		30FE1B4F15E447240013EE24 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30FE1B4E15E447240013EE24 /* en */,
+				30FE1B5015E4472E0013EE24 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C126B69B15C4A14300613404 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C126B69C15C4A14300613404 /* en */,
+				30FE1B4C15E4470D0013EE24 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
