@@ -45,10 +45,11 @@
 }
 
 #pragma mark - View lifecycle
--(id)initWithImage:(UIImage *)image
+-(id)initWithImage:(CGImageRef)image
 {
     if (self = [super initWithNibName:@"SingleImageViewController" bundle:nil]) {
-        self.imgV.image = image;
+        self.imgV.image = [UIImage imageWithCGImage:image];
+        beginImage = [CIImage imageWithCGImage:image];
     }
     return self;
 }
@@ -80,9 +81,9 @@
     [self logAllFilters];
     
     // 得到图片路径创建CIImage对象
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
-    NSURL *fileNameAndPath = [NSURL fileURLWithPath:filePath];
-    beginImage = [CIImage imageWithContentsOfURL:fileNameAndPath];
+    //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
+    //NSURL *fileNameAndPath = [NSURL fileURLWithPath:filePath];
+    //beginImage = [CIImage imageWithContentsOfURL:fileNameAndPath];
     
     // 创建基于GPU的CIContext对象
     context = [CIContext contextWithOptions: nil];
@@ -103,7 +104,7 @@
     self.slider3.minimumValue = -3.14;
     self.slider3.maximumValue = 3.14;
     self.slider3.value = 0.0;
-    self.imgV.image = [UIImage imageWithContentsOfFile:filePath];
+    //self.imgV.image = [UIImage imageWithContentsOfFile:filePath];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *image = [UIImage imageNamed:@"hidemenu.png"];
@@ -114,9 +115,14 @@
     [self.view addSubview:button];
         
     youkuMenuView = [[HHYoukuMenuView alloc]initWithFrame:[HHYoukuMenuView getFrame]];
+    [youkuMenuView setDelegate:self];
     [self.view addSubview:youkuMenuView];
     [youkuMenuView release];
     
+}
+- (void)meunButtonDown:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)logAllFilters {

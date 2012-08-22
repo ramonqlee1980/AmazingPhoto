@@ -337,7 +337,7 @@
     imagePicker.allowsEditing = YES;  
     
     //判断图片源的类型  
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){  
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]){  
         //图片库  
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;  
     } 

@@ -34,13 +34,13 @@
 
 - (IBAction)takePhoto:(id)sender;
 {
-#if 0
+#if 1
     [photoCaptureButton setEnabled:NO];
     
     [videoCamera capturePhotoAsJPEGProcessedUpToFilter:filter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
         
         // Save to assets library
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        ALAssetsLibrary *library = [[[ALAssetsLibrary alloc] init]autorelease];
         //        report_memory(@"After asset library creation");
         
         [library writeImageDataToSavedPhotosAlbum:processedJPEG metadata:nil completionBlock:^(NSURL *assetURL, NSError *error2)
@@ -52,19 +52,37 @@
              else {
                  NSLog(@"PHOTO SAVED - assetURL: %@", assetURL);
              }
-			 
-             runOnMainQueueWithoutDeadlocking(^{
-                 //                 report_memory(@"Operation completed");
-                 [photoCaptureButton setEnabled:YES];
-                 self.navigationController.navigationBarHidden = YES;
-                 NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
-                 UIImage* image = [UIImage imageWithContentsOfFile:filePath];
-                 SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
-                 [self.navigationController pushViewController:viewController animated:YES];
-                 [viewController release];
-             });
+             
+             
+			 ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+             {
+                 ALAssetRepresentation *rep = [myasset defaultRepresentation];
+                 CGImageRef iref = [rep fullResolutionImage];
+                 if (iref) {
+//                     UIImage* image = [UIImage imageWithCGImage:iref];
+                     runOnMainQueueWithoutDeadlocking(^{
+                         //                 report_memory(@"Operation completed");
+                         [photoCaptureButton setEnabled:YES];
+                         self.navigationController.navigationBarHidden = YES;
+                         //NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image" ofType:@"png"];
+                         //UIImage* image = [UIImage imageWithContentsOfFile:filePath];
+                         SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:iref];
+                         [self.navigationController pushViewController:viewController animated:YES];
+                         [viewController release];
+                     });
+                 }
+             };           
+             
+             
+             //
+             ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+             {
+                 NSLog(@"booya, cant get image - %@",[myerror localizedDescription]);
+             };  
+             [library assetForURL:assetURL 
+                      resultBlock:resultblock
+                     failureBlock:failureblock];
          }];
-        [library release];
     }];
 #else
     self.navigationController.navigationBarHidden = YES;

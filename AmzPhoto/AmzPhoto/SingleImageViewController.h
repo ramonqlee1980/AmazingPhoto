@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HHYoukuMenuView.h"
 
-@interface SingleImageViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@interface SingleImageViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,HHYoukuMenuViewDelegate>
 {
     HHYoukuMenuView *youkuMenuView;
 }
@@ -28,6 +29,6 @@
 - (IBAction)savePhoto:(id)sender;
 - (IBAction)resetImage:(id)sender;
 
--(id)initWithImage:(UIImage *)image;
+-(id)initWithImage:(CGImageRef)image;
 
 @end

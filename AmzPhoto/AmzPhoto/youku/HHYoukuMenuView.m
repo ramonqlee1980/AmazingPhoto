@@ -175,6 +175,10 @@
     {
         [self showOrHideMenu];
     }
+    if(mDelegate)
+    {
+        [mDelegate meunButtonDown:sender];
+    }
 }
 
 - (void)rotationAnimationStop
@@ -226,6 +230,10 @@
 - (BOOL)getisMenuHide
 {
     return isMenuHide;
+}
+-(void)setDelegate:(id<HHYoukuMenuViewDelegate>)delegate
+{
+    mDelegate = delegate;
 }
 
 
