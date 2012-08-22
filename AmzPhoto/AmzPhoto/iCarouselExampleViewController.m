@@ -24,6 +24,8 @@
 @property (nonatomic, assign) BOOL wrap;
 @property (nonatomic, retain) NSMutableArray *items;
 
+-(void)showSingleImageView:(id)image;
+
 @end
 
 
@@ -292,15 +294,25 @@
 - (void)photoEditorCanceled:(AFPhotoEditorController *)editor
 {
     // Handle cancelation here
-    [editor dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    [picker dismissModalViewControllerAnimated:YES];
-    
+#if 0
+    [self dismissModalViewControllerAnimated:NO];
+    //    UIImage *image = [UIImage imageNamed:@"Default.png"];
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self performSelector:@selector(showSingleImageView:) withObject:image afterDelay:0.5];   
+#else
+    [self dismissModalViewControllerAnimated:NO];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self showSingleImageView:image];
+#endif
+}
+-(void)showSingleImageView:(id)image
+{
     if(image)
     {       
         AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:image];
@@ -308,10 +320,10 @@
         [self presentModalViewController:editorController animated:YES];        
         [editorController release];
     }
-}
 
+}
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma action
