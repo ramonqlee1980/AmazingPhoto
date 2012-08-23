@@ -45,11 +45,10 @@
 }
 
 #pragma mark - View lifecycle
--(id)initWithImage:(CGImageRef)image
+-(id)initWithImage:(UIImage*)image
 {
     if (self = [super initWithNibName:@"SingleImageViewController" bundle:nil]) {
-        self.imgV.image = [UIImage imageWithCGImage:image];
-        beginImage = [CIImage imageWithCGImage:image];
+        self.imgV.image = image;        
     }
     return self;
 }
@@ -104,7 +103,7 @@
     self.slider3.minimumValue = -3.14;
     self.slider3.maximumValue = 3.14;
     self.slider3.value = 0.0;
-    //self.imgV.image = [UIImage imageWithContentsOfFile:filePath];
+    self.imgV.image = [UIImage imageWithCIImage:beginImage];//[UIImage imageWithContentsOfFile:filePath];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *image = [UIImage imageNamed:@"hidemenu.png"];

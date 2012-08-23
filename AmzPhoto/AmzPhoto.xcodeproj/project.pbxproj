@@ -250,7 +250,6 @@
 		30970E3915E054A200CD5117 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GPUImage.h; path = framework/Source/GPUImage.h; sourceTree = SOURCE_ROOT; };
 		30D5902615DFCCF1000C0C6A /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		30FE1AFD15E439AA0013EE24 /* SingleImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImageViewController.xib; sourceTree = "<group>"; };
-		30FE1B4C15E4470D0013EE24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/ramonqlee/Desktop/Project/AmazingPhoto/AmzPhoto/AmzPhoto/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		30FE1B4E15E447240013EE24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		30FE1B5015E4472E0013EE24 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C126B68E15C4A14300613404 /* AmzPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmzPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +280,7 @@
 		C17E26EA15D1D1DD00C5C781 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		C17E26EC15D1D1F200C5C781 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C17E26EE15D1D25E00C5C781 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		C192D54215E5BF020009BDAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		C1C9610915D5B49000439289 /* PagePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagePhotoViewController.h; sourceTree = "<group>"; };
 		C1C9610A15D5B49000439289 /* PagePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagePhotoViewController.m; sourceTree = "<group>"; };
 		C1E9328D15E31BA300C09B86 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -808,7 +808,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C126B69C15C4A14300613404 /* en */,
-				30FE1B4C15E4470D0013EE24 /* zh-Hans */,
+				C192D54215E5BF020009BDAC /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

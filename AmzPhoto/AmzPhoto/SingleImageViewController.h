@@ -29,6 +29,6 @@
 - (IBAction)savePhoto:(id)sender;
 - (IBAction)resetImage:(id)sender;
 
--(id)initWithImage:(CGImageRef)image;
+-(id)initWithImage:(UIImage*)image;
 
 @end
