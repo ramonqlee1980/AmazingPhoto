@@ -281,14 +281,14 @@
 - (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
 {
     // Handle the result image here
-    if (image != nil) {  
+    if (image != nil) {
         SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
         [self.navigationController pushViewController:viewController animated:YES];
         [viewController release];  
     } 
     
     //关闭图像选择器  
-    [self dismissModalViewControllerAnimated:YES];  
+    [self dismissModalViewControllerAnimated:NO];  
 }
 
 - (void)photoEditorCanceled:(AFPhotoEditorController *)editor

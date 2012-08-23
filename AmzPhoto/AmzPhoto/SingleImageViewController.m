@@ -15,8 +15,8 @@
 @property (strong, nonatomic) CIFilter *filter;
 @property (strong, nonatomic) CIFilter *filter2;
 @property (strong, nonatomic) CIFilter *filter3;
-@property (strong, nonatomic) CIImage *beginImage;
-
+@property (retain, nonatomic) CIImage *beginImage;
+@property (assign, nonatomic) UIImage *mImage;
 - (void)logAllFilters;
 
 @end
@@ -32,10 +32,12 @@
 @synthesize filter2;
 @synthesize filter3;
 @synthesize beginImage;
+@synthesize mImage;
 @synthesize youkuMenuView;
 -(void)dealloc
 {
     [youkuMenuView release];
+    self.mImage = nil;
     [super dealloc];
 }
 
@@ -48,7 +50,8 @@
 -(id)initWithImage:(UIImage*)image
 {
     if (self = [super initWithNibName:@"SingleImageViewController" bundle:nil]) {
-        self.imgV.image = image;        
+        beginImage = [CIImage imageWithCGImage:image.CGImage];
+        mImage = [[UIImage alloc]initWithCGImage:image.CGImage];
     }
     return self;
 }
@@ -103,7 +106,8 @@
     self.slider3.minimumValue = -3.14;
     self.slider3.maximumValue = 3.14;
     self.slider3.value = 0.0;
-    self.imgV.image = [UIImage imageWithCIImage:beginImage];//[UIImage imageWithContentsOfFile:filePath];
+    self.imgV.image = mImage;
+    NSLog(@"image:%@",self.imgV.image);
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *image = [UIImage imageNamed:@"hidemenu.png"];
