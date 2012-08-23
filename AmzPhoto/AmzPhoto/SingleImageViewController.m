@@ -123,10 +123,7 @@
     [youkuMenuView release];
     
 }
-- (void)meunButtonDown:(id)sender
-{
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+
 
 - (void)logAllFilters {
     NSArray *properties = [CIFilter filterNamesInCategory:
@@ -253,6 +250,12 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker 
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark youkuDelegate
+- (void)meunButtonDown:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
