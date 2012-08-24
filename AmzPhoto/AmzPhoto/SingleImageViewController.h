@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HHYoukuMenuView.h"
-
+#import "SHSShareViewController.h"
 
 @interface SingleImageViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate,HHYoukuMenuViewDelegate>
 {
     HHYoukuMenuView *youkuMenuView;
+    SHSShareViewController *shareController;
 }
 @property (nonatomic, retain) HHYoukuMenuView *youkuMenuView;
 
@@ -28,6 +29,7 @@
 - (IBAction)loadPhoto:(id)sender;
 - (IBAction)savePhoto:(id)sender;
 - (IBAction)resetImage:(id)sender;
+
 
 -(id)initWithImage:(UIImage*)image;
 

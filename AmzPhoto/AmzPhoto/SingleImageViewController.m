@@ -249,13 +249,30 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker 
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];    
 }
 
 #pragma mark youkuDelegate
 - (void)meunButtonDown:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //share by bshare
+    shareController.shareType=ShareTypeText;
+    shareController=[[SHSShareViewController alloc] initWithRootViewController:self];
+    shareController.sharedtitle=@"test";
+    shareController.sharedText=@"test";
+    //shareController.sharedURL=@"http://www.test.com";
+    //shareController.sharedImageURL=@"http://a4.att.hudong.com/74/08/01300000831741129317080840244.jpg";
+    shareController.sharedImage=mImage;
+    
+    shareController.shareType=ShareTypeTextAndImage;
+    
+    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+        [shareController showShareView];
+    else
+        [shareController showShareViewFromRect:CGRectMake(190, 900, 1, 1)];
+
+    //[self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 
 @end

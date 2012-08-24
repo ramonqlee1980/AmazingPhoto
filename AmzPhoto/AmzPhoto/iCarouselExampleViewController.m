@@ -281,7 +281,7 @@
 - (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
 {
     // Handle the result image here
-    if (image != nil) {
+    if (image != nil) {        
         SingleImageViewController* viewController = [[SingleImageViewController alloc] initWithImage:image];
         [self.navigationController pushViewController:viewController animated:YES];
         [viewController release];  

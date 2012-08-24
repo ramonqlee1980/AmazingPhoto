@@ -34,7 +34,7 @@
 
 - (IBAction)takePhoto:(id)sender;
 {
-#if 1
+#if 0
     [photoCaptureButton setEnabled:NO];
     
     [videoCamera capturePhotoAsJPEGProcessedUpToFilter:filter withCompletionHandler:^(NSData *processedJPEG, NSError *error){
